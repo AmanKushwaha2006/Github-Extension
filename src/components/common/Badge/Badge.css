@@ -1,0 +1,69 @@
+.app-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  border: 1px solid transparent;
+}
+
+.app-badge__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+.app-badge--teal {
+  background: var(--accent-subtle);
+  border-color: rgba(20, 184, 166, 0.3);
+  color: var(--accent-primary);
+}
+.app-badge--teal .app-badge__dot {
+  background: var(--accent-primary);
+  box-shadow: 0 0 6px var(--accent-primary);
+}
+
+.app-badge--success {
+  background: rgba(34, 197, 94, 0.1);
+  border-color: rgba(34, 197, 94, 0.25);
+  color: var(--status-success);
+}
+.app-badge--success .app-badge__dot {
+  background: var(--status-success);
+}
+
+.app-badge--warning {
+  background: rgba(245, 158, 11, 0.1);
+  border-color: rgba(245, 158, 11, 0.25);
+  color: var(--status-warning);
+}
+.app-badge--warning .app-badge__dot {
+  background: var(--status-warning);
+}
+
+.app-badge--info {
+  background: rgba(59, 130, 246, 0.1);
+  border-color: rgba(59, 130, 246, 0.25);
+  color: var(--status-info);
+}
+.app-badge--info .app-badge__dot {
+  background: var(--status-info);
+}
+
+.app-badge--purple {
+  background: rgba(168, 85, 247, 0.1);
+  border-color: rgba(168, 85, 247, 0.25);
+  color: var(--status-purple);
+}
+.app-badge--purple .app-badge__dot {
+  background: var(--status-purple);
+}
+
+.app-badge--neutral {
+  background: var(--bg-card);
+  border-color: var(--border-default);
+  color: var(--text-secondary);
+}

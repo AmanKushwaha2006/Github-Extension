@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "CodebaseIQ — GitHub Codebase Intelligence",
+  "version": "1.0.0",
+  "description": "Understand any GitHub repository visually with architecture diagrams, code flow, and API mapping.",
+  "action": {
+    "default_popup": "index.html",
+    "default_title": "CodebaseIQ — GitHub Intelligence",
+    "default_icon": {
+      "16": "favicon.svg",
+      "48": "favicon.svg",
+      "128": "favicon.svg"
+    }
+  },
+  "icons": {
+    "16": "favicon.svg",
+    "48": "favicon.svg",
+    "128": "favicon.svg"
+  },
+  "permissions": [
+    "activeTab",
+    "storage"
+  ]
+}

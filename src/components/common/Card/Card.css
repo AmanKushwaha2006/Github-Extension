@@ -1,0 +1,25 @@
+.app-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  position: relative;
+  transition: all 0.25s ease;
+}
+
+.app-card--elevated {
+  box-shadow: var(--shadow-md);
+}
+
+.app-card--glass {
+  background: rgba(22, 25, 34, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: var(--shadow-lg), var(--shadow-glow);
+}
+
+.app-card--hoverable:hover {
+  transform: translateY(-3px);
+  border-color: rgba(20, 184, 166, 0.35);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
