@@ -22,7 +22,7 @@ import './CodeFlow.css';
 export const CodeFlow = () => {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
-  const target = searchParams.get('target') || 'expressjs/express';
+  const target = searchParams.get('target') || sessionStorage.getItem('last_active_repo') || 'expressjs/express';
 
   const flows = useMemo(() => getRepoFlows(target), [target]);
   const [activeFlowId, setActiveFlowId] = useState(() => flows[0]?.id || 'auth-flow');

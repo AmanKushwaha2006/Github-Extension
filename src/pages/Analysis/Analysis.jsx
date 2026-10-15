@@ -76,6 +76,7 @@ export const Analysis = () => {
             // Cache result in sessionStorage for instant retrieval by dashboard
             try {
               sessionStorage.setItem(`analysis_${result.data.fullName}`, JSON.stringify(result.data));
+              sessionStorage.setItem('last_active_repo', result.data.fullName);
             } catch {
               // Ignore storage quotas
             }

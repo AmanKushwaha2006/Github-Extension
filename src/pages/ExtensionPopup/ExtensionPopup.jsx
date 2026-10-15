@@ -17,7 +17,7 @@ import './ExtensionPopup.css';
 
 export const ExtensionPopup = () => {
   const [searchParams] = useSearchParams();
-  const target = searchParams.get('target') || 'expressjs/express';
+  const target = searchParams.get('target') || sessionStorage.getItem('last_active_repo') || 'expressjs/express';
 
   const [repoData, setRepoData] = useState(null);
   const [loading, setLoading] = useState(true);

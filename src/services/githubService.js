@@ -27,6 +27,41 @@ export function parseRepoInput(input) {
 }
 
 const KNOWN_REPOS_METADATA = {
+  'AmanKushwaha2006/Github-Extension': {
+    name: 'Github-Extension',
+    fullName: 'AmanKushwaha2006/Github-Extension',
+    description: 'Next-Gen GitHub Codebase Intelligence platform and Chrome extension for visual AST architecture, code flows, and PR impact.',
+    stars: 120,
+    forks: 34,
+    openIssues: 0,
+    language: 'JavaScript',
+    license: 'MIT',
+    defaultBranch: 'main',
+    languages: { JavaScript: 68.2, CSS: 26.5, HTML: 5.3 },
+    topics: ['chrome-extension', 'github-extension', 'ast', 'architecture', 'code-flow', 'developer-tools'],
+    architecture: [
+      { id: 'ext-popup', name: 'Extension Popup & Ingress', type: 'Extension Ingress', file: 'src/pages/ExtensionPopup/ExtensionPopup.jsx', detail: 'Manifest V3 popup entry point providing instant repository telemetry, branch status, and deep linking', code: `export const ExtensionPopup = () => {\n  const [repoData, setRepoData] = useState(null);\n  const openFullPage = (path) => window.open(path, '_blank');\n  return <div className="extension-popup-view">...</div>;\n};` },
+      { id: 'service-engine', name: 'AST & Topology Engine', type: 'Core Service', file: 'src/services/githubService.js', detail: 'GitHub API client orchestrator, AST structure synthesis, OpenAPI generator, and AI copilot model', code: `export async function analyzeRepository(repoInput) {\n  const parsed = parseRepoInput(repoInput);\n  const res = await fetch(\`https://api.github.com/repos/\${parsed.fullName}\`);\n  return synthesizeArchitecture(res);\n};` },
+      { id: 'dashboard-studio', name: 'Intelligence Dashboard Studio', type: 'Studio View', file: 'src/pages/Dashboard/Dashboard.jsx', detail: 'Visual topology canvas, API route registry, AI architectural insights, and ARCHITECTURE.md exporter', code: `export const Dashboard = () => {\n  const [activeTab, setActiveTab] = useState('topology');\n  return <div className="dashboard-container">...</div>;\n};` },
+      { id: 'flow-tracer', name: 'Interactive Flow Engine', type: 'Trace Engine', file: 'src/pages/CodeFlow/CodeFlow.jsx', detail: 'Deterministic sequence tracing runner with animated playback, step inspection, and wire payload display', code: `export const CodeFlow = () => {\n  const flows = useMemo(() => getRepoFlows(target), [target]);\n  const [isPlaying, setIsPlaying] = useState(false);\n  return <div className="codeflow-container">...</div>;\n};` },
+      { id: 'copilot-assistant', name: 'AI Codebase Copilot', type: 'Copilot Assistant', file: 'src/pages/CodeChat/CodeChat.jsx', detail: 'AST-grounded natural language Q&A engine analyzing architecture, design patterns, and routes', code: `export const CodeChat = () => {\n  const handleSendMessage = async (query) => {\n    const response = await queryCodebaseAI(repoData, query);\n    setMessages(prev => [...prev, response]);\n  };\n};` }
+    ],
+    endpoints: [
+      { method: 'GET', path: '/repository', handler: 'Repository.handleStartAnalysis', file: 'src/pages/Repository/Repository.jsx' },
+      { method: 'GET', path: '/analysis', handler: 'Analysis.runPipeline', file: 'src/pages/Analysis/Analysis.jsx' },
+      { method: 'GET', path: '/dashboard', handler: 'Dashboard.loadData', file: 'src/pages/Dashboard/Dashboard.jsx' },
+      { method: 'GET', path: '/flow', handler: 'CodeFlow.playbackEngine', file: 'src/pages/CodeFlow/CodeFlow.jsx' },
+      { method: 'GET', path: '/dependencies', handler: 'Dependencies.auditMatrix', file: 'src/pages/Dependencies/Dependencies.jsx' },
+      { method: 'GET', path: '/impact', handler: 'ImpactAnalysis.calcBlastRadius', file: 'src/pages/ImpactAnalysis/ImpactAnalysis.jsx' },
+      { method: 'POST', path: '/chat', handler: 'queryCodebaseAI', file: 'src/services/githubService.js' }
+    ],
+    insights: {
+      summary: 'CodebaseIQ is a modern React SPA and Chrome Extension architecture leveraging deterministic AST parsing, modular view layouts, and responsive CSS token design.',
+      strengths: ['Zero external auth requirement for public repositories', 'Resilient synthetic AST fallbacks for rate-limited queries', 'High-fidelity dark mode with tailored HSL tokens'],
+      keyFiles: ['src/App.jsx', 'src/routes/AppRoutes.jsx', 'src/services/githubService.js', 'src/pages/Dashboard/Dashboard.jsx', 'src/pages/ExtensionPopup/ExtensionPopup.jsx'],
+      patterns: ['Modular Pipeline', 'Presenter-Container Pattern', 'Deterministic Fallback Strategy', 'Single-Source Design Tokens']
+    }
+  },
   'expressjs/express': {
     name: 'express',
     fullName: 'expressjs/express',

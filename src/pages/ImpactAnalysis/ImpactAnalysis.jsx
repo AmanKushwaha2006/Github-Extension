@@ -21,7 +21,7 @@ import './ImpactAnalysis.css';
 export const ImpactAnalysis = () => {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
-  const target = searchParams.get('target') || 'expressjs/express';
+  const target = searchParams.get('target') || sessionStorage.getItem('last_active_repo') || 'expressjs/express';
 
   const prList = useMemo(() => getRepoImpactAnalysis(target), [target]);
   const [activePrId, setActivePrId] = useState(() => prList[0]?.id || 'pr-142');

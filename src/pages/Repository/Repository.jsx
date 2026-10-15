@@ -26,6 +26,14 @@ export const Repository = () => {
 
   const featuredRepos = [
     {
+      name: 'AmanKushwaha2006/Github-Extension',
+      desc: 'Next-Gen GitHub Codebase Intelligence platform and Chrome extension architecture.',
+      stars: '120',
+      lang: 'JavaScript',
+      langColor: '#F7DF1E',
+      type: 'Chrome Extension & SPA'
+    },
+    {
       name: 'expressjs/express',
       desc: 'Fast, unopinionated, minimalist web framework for node.',
       stars: '64.2k',
@@ -67,6 +75,11 @@ export const Repository = () => {
       return;
     }
     setErrorMsg(null);
+    try {
+      sessionStorage.setItem('last_active_repo', parsed.fullName);
+    } catch {
+      // Ignore quota errors
+    }
     navigate(`/analysis?target=${encodeURIComponent(parsed.fullName)}&depth=${scanDepth}`);
   };
 

@@ -19,7 +19,7 @@ import './Dependencies.css';
 export const Dependencies = () => {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
-  const target = searchParams.get('target') || 'expressjs/express';
+  const target = searchParams.get('target') || sessionStorage.getItem('last_active_repo') || 'expressjs/express';
 
   const depData = useMemo(() => getRepoDependencies(target), [target]);
   const [filterCategory, setFilterCategory] = useState('all'); // 'all' | 'internal' | 'external' | 'core'

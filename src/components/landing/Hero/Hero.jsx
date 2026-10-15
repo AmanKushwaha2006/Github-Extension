@@ -11,6 +11,7 @@ export const Hero = () => {
   const [feedback, setFeedback] = useState(null);
 
   const sampleRepos = [
+    { name: 'AmanKushwaha2006/Github-Extension', color: '#14B8A6' },
     { name: 'expressjs/express', color: '#22C55E' },
     { name: 'facebook/react', color: '#38BDF8' },
     { name: 'tailwindlabs/tailwindcss', color: '#38BDF8' },
